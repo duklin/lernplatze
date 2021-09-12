@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{day.strftime("%a, %d-%b")}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class='col-2'></div>
+            <div class='col-8'>
+                {% for lib_name in slots %}
+                    <h2>{{lib_name}}</h2>
+                    <table class='table text-center table-striped'>
+                    <thead>
+                        <tr>
+                            <th scope="col">Period</th>
+                            <th scope="col">Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for period in slots[lib_name] %}
+                        <tr>
+                            <th scope='row'>
+                                {# <a href='http://localhost:5000/day/{{day.isoformat()}}' class="link-primary" target='_blank'>{{day.strftime("%a, %d-%b")}}</a> #}
+                                {{period}}
+                            </th>
+                            <td>
+                                {% for place in slots[lib_name][period] %}
+                                    <a href='{{place["Link"]}}' class="link-primary" target='_blank'>{{place['Place']}}</a>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% endfor %}
+            </div>
+            <div class='col-2'></div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

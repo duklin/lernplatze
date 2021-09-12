@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.user.lernplatze</string>
+
+        <key>WorkingDirectory</key>
+        <string>/path/to/this/folder</string>
+
+        <key>ProgramArguments</key>
+        <array>
+            <string>./start_server.sh</string>
+        </array>
+
+        <key>StandardOutPath</key>
+        <string>logfile.log</string>
+
+        <key>StandardErrorPath</key>
+        <string>error_logfile.log</string>
+
+        <key>EnvironmentVariables</key>
+        <dict>
+            <key>LERNPLATZE_USERNAME</key>
+            <string>Your bonnus username</string>
+
+            <key>LERNPLATZE_PASSWORD</key>
+            <string>Your bonnus password</string>
+
+            <key>LERNPLATZE_STUDENT_NAME</key>
+            <string>Your name for searching booked places</string>
+        </dict>
+
+        <key>RunAtLoad</key>
+        <true />
+    </dict>
+</plist>
